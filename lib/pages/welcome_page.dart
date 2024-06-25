@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../widgets/resuable_headtext.dart';
+import '../widgets/reusable_text.dart';
+ // Adjust the path accordingly
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -9,11 +12,11 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   List images = [
-   "welcome_image1.png",
-   "welcome_image2.png",
-   "welcome_image3.png",
+    "welcome_image1.png",
+    "welcome_image2.png",
+    "welcome_image3.png",
   ];
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,26 +24,31 @@ class _WelcomePageState extends State<WelcomePage> {
         scrollDirection: Axis.vertical,
         itemCount: images.length,
         itemBuilder: (_, index) {
-         return Container(
-          width:300,
-          height:400,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/" + images[index]),
-              fit: BoxFit.cover,
+          return Container(
+            width: double.maxFinite,
+            height: 300,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/" + images[index]),
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          child:Container(
-            margin: const EdgeInsets.only(top:150, left:20, right:20 ),
-            child: Row(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Column(
-                  children: [],
-                )
+                AppHeadText(color: Color.fromARGB(255, 133, 87, 70), text: "Flawless &"),
+                AppHeadText(color: Color.fromARGB(255, 104, 106, 104), text: "Fabulous"), 
+                SizedBox(height: 20,),
+                Container(
+                  width: 300,
+                  child: AppText(
+                    text: "Skincare is a vital ritual that nurtures and protects your skin, shielding it from daily stressors like pollution and UV rays.", 
+                    textSize: 14,
+                    color: const Color.fromARGB(255, 120, 144, 156),),
+                ),
               ],
             ),
-          ),
-         );
+          );
         },
       ),
     );
