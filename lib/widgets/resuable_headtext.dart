@@ -12,7 +12,7 @@ class AppHeadText extends StatelessWidget {
       text,
       style: TextStyle(
         color: color, 
-        fontSize: 30, 
+        fontSize: 20, 
         fontWeight: FontWeight.bold),
     );
   }
