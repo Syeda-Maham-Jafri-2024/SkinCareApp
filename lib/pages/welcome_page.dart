@@ -40,6 +40,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child:Container(
               margin: const EdgeInsets.only(top : 30, left:15, right:15),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                 Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,10 +56,23 @@ class _WelcomePageState extends State<WelcomePage> {
                     color: Color.fromARGB(255, 120, 144, 156),),
                 ),
                 const SizedBox(height: 5,),
-                //ResponsiveButton(),
-              ],
-            ),
-                ],
+                ResponsiveButton(),
+               ],
+               ),
+               Column(
+                children: List.generate(3,(indexDots){
+                  return Container(
+                    margin: EdgeInsets.only(bottom: 1),
+                    width: 8,
+                    height:index==indexDots?28:10,    
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      color: index==indexDots? const Color.fromARGB(255, 180, 181, 124) :const Color.fromARGB(255, 180, 181, 124).withOpacity(0.3) ,
+                    ),              
+                   );
+                }),
+               )
+               ],
               ),
             ),
              
@@ -68,3 +82,6 @@ class _WelcomePageState extends State<WelcomePage> {
     );
   }
 }
+// git add . 
+// git commit -m ""
+// git push origi mai
